@@ -15,5 +15,5 @@ build:
 	
 rebuild: cleanup restore build
 
-run: 
-	dotnet _bin/altium.gen.dll
+
+	
