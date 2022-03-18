@@ -76,6 +76,11 @@ namespace Altium.Sort
       _progress.Complete( "Done" );
 
       File.Move( GetFullPath( sortedFiles.First() ), TargetFilePath, true );
+
+      Directory
+        .GetFiles( Environment.CurrentDirectory, $"*.{Options.TempFileExtension}" )
+        .ToList()
+        .ForEach( x => File.Delete( x ) );
     }
     #endregion
 

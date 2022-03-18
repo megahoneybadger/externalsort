@@ -1,5 +1,6 @@
 ﻿#region Usings
 using Altium.Utils;
+using Sorting.SedgewickSort;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -107,7 +108,7 @@ namespace Altium.Sort
 
 			for( int i = 0; i < rows.Count; ++i )
 			{
-				await writer.WriteLineAsync( rows[ i ] );
+				await writer.WriteLineAsync( rows [ i ] );
 			}
 		}
     #endregion
