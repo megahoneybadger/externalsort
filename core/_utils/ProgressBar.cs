@@ -134,6 +134,12 @@ namespace Altium.Utils
 
 				ResetTimer();
 			}
+			//try
+			//{
+
+			//}
+			//catch { }
+
 		}
 		/// <summary>
 		/// 

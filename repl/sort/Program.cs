@@ -39,7 +39,6 @@ namespace Altium.Sort.Repl
 				Console.Error.WriteLine( e.Message );
 				Console.ResetColor();
 			}
-			
     }
 		/// <summary>
 		/// 
