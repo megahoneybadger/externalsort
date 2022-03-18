@@ -1,6 +1,5 @@
 ﻿#region Usings
 using Altium.Utils;
-using Sorting.SedgewickSort;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
