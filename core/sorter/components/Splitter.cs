@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Altium.Sort
 {
 	/// <summary>
-	/// 
+	/// Splits input file into groupd of small chunks.
 	/// </summary>
 	internal class Splitter : BaseComponent
   {

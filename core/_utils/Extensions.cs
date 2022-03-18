@@ -73,8 +73,7 @@ namespace Altium.Utils
 		}
 		#endregion
 
-		#region Class 'Size' methods
-
+		#region Class 'Size Suffix' methods
 		/// <summary>
 		/// 
 		/// </summary>
@@ -106,9 +105,6 @@ namespace Altium.Utils
 					adjustedSize,
 					SizeSuffixes [ mag ] );
 		}
-
-
-
 		/// <summary>
 		/// 
 		/// </summary>

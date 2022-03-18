@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Altium.Sort
 {
-	/// <summary>
-	/// 
-	/// </summary>
-	internal class PartitionMerger 
+  /// <summary>
+  /// Merges slice of sorted chunks into a single files.
+  /// </summary>
+  internal class PartitionMerger 
 	{
     #region Class properties
     /// <summary>
@@ -29,7 +29,7 @@ namespace Altium.Sort
     /// <summary>
     /// 
     /// </summary>
-    private IList<ChunkReader> _readers;
+    private readonly IList<ChunkReader> _readers;
     #endregion
 
     #region Class properties
@@ -55,7 +55,6 @@ namespace Altium.Sort
       _index = index;
 
       _readers = new List<ChunkReader>( _files.Count );
-      //_values = new LogRow [ _files.Count ];
 
       _writer = new StreamWriter( File.OpenWrite( TargetFilePath ), bufferSize: 64 * 1024 * 1024 );
     }
@@ -189,7 +188,4 @@ namespace Altium.Sort
       GetFullPath( outputFileName.Replace( Options.TempFileExtension, string.Empty ) );
     #endregion
   }
-
-  
-
 }

@@ -1,12 +1,11 @@
 ﻿#region Usings
 using System.IO;
-using System.Threading.Tasks;
 #endregion
 
 namespace Altium.Sort
 {
 	/// <summary>
-	/// 
+	/// Reads lines by line from a sorted chunk.
 	/// </summary>
 	internal class ChunkReader 
 	{
@@ -14,7 +13,7 @@ namespace Altium.Sort
     /// <summary>
     /// 
     /// </summary>
-    private string _path;
+    private readonly string _path;
     /// <summary>
     /// 
     /// </summary>
@@ -22,7 +21,6 @@ namespace Altium.Sort
     /// <summary>
     /// 
     /// </summary>
-    //private LogRow _current;
     private string _current;
     /// <summary>
     /// 
@@ -55,10 +53,7 @@ namespace Altium.Sort
     /// <summary>
     /// 
     /// </summary>
-    public void Dispose() 
-    {
-      _reader?.Close();
-    }
+    public void Dispose() => _reader?.Close();
     #endregion
 
     #region Class public methods
@@ -80,7 +75,6 @@ namespace Altium.Sort
       var s = _reader.ReadLine();
 
       _current = s;
-      //_current = LogRow.FromString( s );
 
       return true;
     }
@@ -97,7 +91,4 @@ namespace Altium.Sort
 		}
 		#endregion
 	}
-
-  
-
 }

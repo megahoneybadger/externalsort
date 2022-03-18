@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Altium.Sort
 {
 	/// <summary>
-	/// 
+	/// Sorts slice of chunks.
 	/// </summary>
 	internal class Sorter : BaseComponent
 	{
@@ -36,7 +36,6 @@ namespace Altium.Sort
 		{
       
     }
-
     #endregion
 
     #region Class public methods
@@ -101,7 +100,7 @@ namespace Altium.Sort
         rows.Add( await reader.ReadLineAsync());
       }
 
-      //RadixSorter.Sort( rows );
+      // TODO: try alternative string algorithm (e.x. burst sort).
       rows.Sort( StringComparer.Ordinal );
 
       await using var writer = new StreamWriter( target, bufferSize: OutputBufferSize );

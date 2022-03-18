@@ -19,27 +19,26 @@ namespace Altium.Utils
 		/// <summary>
 		/// 
 		/// </summary>
-		private static Random _random;
+		private static readonly Random _random;
 		/// <summary>
 		/// 
 		/// </summary>
-		private static List<string> _suffixes;
-		
+		private static readonly List<string> _suffixes;
 		#endregion
 
 		#region Class initialization
-	/// <summary>
-	/// 
-	/// </summary>
-	static TestFactory() 
+		/// <summary>
+		/// 
+		/// </summary>
+		static TestFactory()
 		{
 			_random = new();
-			_suffixes = new ();
+			_suffixes = new();
 
 			var set = new HashSet<string>();
 			var sw = Stopwatch.StartNew();
 
-			while( _suffixes.Count < 1000 ) 
+			while( _suffixes.Count < 1000 )
 			{
 				var next = string.Empty;
 
@@ -67,10 +66,11 @@ namespace Altium.Utils
 		public static string GetRandomString( int length )
 		{
 			const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
 			return new string( Enumerable.Repeat( chars, length )
 				.Select( s => s [ _random.Next( s.Length ) ] ).ToArray() );
 		}
-	
+
 		/// <summary>
 		/// 
 		/// </summary>
@@ -88,7 +88,6 @@ namespace Altium.Utils
 		/// </summary>
 		/// <returns></returns>
 		public static bool GetRandomBoolean() => _random.Next( 0, 10 ) > 5;
-		
 		/// <summary>
 		/// 
 		/// </summary>
@@ -339,10 +338,8 @@ namespace Altium.Utils
 		/// <param name="list"></param>
 		/// <param name="count"></param>
 		/// <returns></returns>
-		public static T SelectRandomObject<T>( IList<T> list )
-		{
-			return SelectRandomObjects<T>( list, 1 ).FirstOrDefault();
-		}
+		public static T SelectRandomObject<T>( IList<T> list ) =>
+			SelectRandomObjects<T>( list, 1 ).FirstOrDefault();
 		/// <summary>
 		/// 
 		/// </summary>
@@ -367,9 +364,6 @@ namespace Altium.Utils
 
 			return null;
 		}
-		
-		
-		
 		#endregion
 	}
 }

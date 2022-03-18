@@ -104,14 +104,14 @@ namespace Altium.Utils
 							Process.GetCurrentProcess().PrivateMemorySize64.ToSizeSuffix());
 
 			Console.ForegroundColor = color;
-			Console.WriteLine( $" Complete: {text}." );
+			Console.WriteLine( $" {text}." );
 			Console.ResetColor();
 
 			Dispose();
 		}
 		#endregion
 
-		#region 'Timer' methods
+		#region Class 'Timer' methods
 		/// <summary>
 		/// 
 		/// </summary>
@@ -134,12 +134,6 @@ namespace Altium.Utils
 
 				ResetTimer();
 			}
-			//try
-			//{
-
-			//}
-			//catch { }
-
 		}
 		/// <summary>
 		/// 

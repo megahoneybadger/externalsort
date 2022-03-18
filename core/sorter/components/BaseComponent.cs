@@ -49,7 +49,5 @@ namespace Altium.Sort
       _parent = parent;
     }
     #endregion
-
-   
   }
 }

@@ -2,7 +2,7 @@
   "profiles": {
     "altium.repl.sort": {
       "commandName": "Project",
-      "commandLineArgs": "-n 1gb.txt"
+      "commandLineArgs": "-n 200mb.txt"
     }
   }
 }

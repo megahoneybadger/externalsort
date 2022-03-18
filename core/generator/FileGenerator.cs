@@ -6,7 +6,7 @@ using System.IO;
 namespace Altium.Generator
 {
 	/// <summary>
-	/// 
+	/// Create file of specified size.
 	/// </summary>
 	public class FileGenerator
 	{
