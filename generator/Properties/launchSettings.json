@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "altium.repl.gen": {
+      "commandName": "Project",
+      "commandLineArgs": " -s 100kb -n  MyFile .txt"
+    }
+  }
+}
