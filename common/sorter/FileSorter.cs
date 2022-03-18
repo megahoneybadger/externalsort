@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Altium.Sort
 {
 	/// <summary>
-	/// 
+	/// Sort big files usings external sorting algorithm.
 	/// </summary>
 	public class FileSorter
 	{

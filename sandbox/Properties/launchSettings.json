@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "altium.repl.sort": {
+      "commandName": "Project",
+      "commandLineArgs": "-n 1gb.txt"
+    }
+  }
+}

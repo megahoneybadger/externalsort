@@ -1,13 +1,8 @@
 ﻿#region Usings
-using Altium.Utils;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 #endregion
 
@@ -73,8 +68,6 @@ namespace Altium.Sort
 
 			for( var i = 0; i < _files.Count; i++ )
 			{
-				// RENAME BEFORE DELETION SINCE DELETION OF LARGE FILES CAN TAKE SOME TIME
-				// WE DONT WANT TO CLASH WHEN WRITING NEW FILES.
 				var temporaryFilename = $"{_files [ i ]}.removal";
 				File.Move( GetFullPath( _files [ i ] ), GetFullPath( temporaryFilename ) );
 				File.Delete( GetFullPath( temporaryFilename ) );
@@ -145,7 +138,6 @@ namespace Altium.Sort
         if( reader.Next() ) 
         {
           _readers.Add( reader );
-          //_values [ i ] = reader.Current;
         }
 			}
 		}
