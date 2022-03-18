@@ -22,7 +22,7 @@ namespace Altium.Sort.Repl
 		{
 			//new FileGenerator( "200mb.txt", 200 * 1024 * 1024L ).Create();
 
-			await new FileSorter( "1gb-l.txt" ).Run();
+			await new FileSorter( "1gb.txt" ).Run();
     }
   
     #endregion

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 #endregion
@@ -40,11 +41,11 @@ namespace Altium.Sort
     /// <summary>
     /// 
     /// </summary>
-    public string TargetFileName => GetOutputFileName( _index );
+    private string TargetFileName => GetOutputFileName( _index );
     /// <summary>
     /// 
     /// </summary>
-    public string TargetFilePath => GetFullPath( TargetFileName );
+    private string TargetFilePath => GetFullPath( TargetFileName );
     #endregion
 
     #region Class initialization
@@ -86,18 +87,33 @@ namespace Altium.Sort
     /// 
     /// </summary>
     /// <returns></returns>
-    public async Task<string> Merge() 
+    public async Task<string> Merge( bool finalRun ) 
     {
       OpenReaders();
+      var sb = new StringBuilder( 100 ); 
 
       while( _readers.Count > 0 ) 
       {
         var index = GetCurrentReader();
         var reader = _readers [ index ];
 
-        var valueToWrite = reader.Current.ToString();
+        var s = reader.Current.ToString();
 
-        _writer.WriteLine( valueToWrite.AsMemory() );
+        if( finalRun ) 
+        {
+          var tail = s [ ( s.Length - 10 ).. ];
+          var head = s [ ..( s.Length - 10 ) ];
+          var n = int.Parse( tail );
+
+          sb.Append( n );
+          sb.Append( '.' );
+          sb.Append( head );
+
+          s = sb.ToString();
+          sb.Length = 0;
+        }
+
+        _writer.WriteLine( s.AsMemory() );
 
         reader.Next();
 
@@ -112,7 +128,6 @@ namespace Altium.Sort
 
       return await Task.FromResult( TargetFilePath );
     }
-
 		/// <summary>
 		/// /
 		/// </summary>
